@@ -1,4 +1,7 @@
-
+@font-face {
+  font-family: 'Amiri-Italic';
+  src: url('Amiri-Italic.ttf');
+}
 
 body {
   margin: 0;
@@ -94,6 +97,8 @@ h1 {
   padding: 2rem;
   box-sizing: border-box;
   text-wrap: balance;
+  
+  
 }
 
 .main-graphic {
@@ -132,3 +137,111 @@ h1 {
 .home-word span:nth-child(2) { margin-left: 0.5em; }
 .home-word span:nth-child(3) { margin-left: 1em; }
 .home-word span:nth-child(4) { margin-left: 1.5em; }
+
+.flower-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 equal columns */
+  gap: 1rem; /* space between cards */
+}
+
+
+/* individual card */
+.flower-card {
+  margin: 0;
+  border: 1px solid #111;
+  padding: 0.5rem;
+  background: #fdfdfd;
+}
+
+.flower-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 5; /* keeps a nice consistent rectangle */
+}
+
+.flower-card figcaption {
+  margin-top: 0.5rem;
+  margin-bottom: 0; 
+  font-size: medium;
+  font-family: "Amiri-Italic", 'Times New Roman';
+  line-height: 1;
+}
+
+@media (max-width: 1000px) {
+  .flower-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .flower-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.garden-box {
+  border: 1px solid #111;
+  padding: 1rem 1.25rem;
+  background: #fdfdfd;
+}
+
+.garden-title {
+  font-family: "Be Vietnam Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  text-transform: lowercase;
+  border-bottom: 1px dotted #111;
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+/* checklist styling */
+.garden-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.garden-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+
+.garden-checklist label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.garden-checklist input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+}
+
+/* links to Google Maps */
+.garden-checklist a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(0,0,0,0.4);
+} 
+
+.garden-checklist a:hover {
+  border-bottom-style: solid;
+}
+
+/* the empty square */
+.garden-checkbox {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #111;
+  display: inline-block;
+  flex-shrink: 0;
+}
