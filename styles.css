@@ -6,9 +6,16 @@
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  display: flex;          
+  display: flex;
   height: 100vh; 
-  overflow: hidden;          
+ overflow: hidden; 
+}
+
+body.page-to-me {
+  height: auto;          /* allow page to grow */
+  min-height: 100vh;     /* still at least full viewport */
+  overflow-x: hidden;    /* keep sideways stuff hidden */
+  overflow-y: auto;      /* but allow vertical scroll */
 }
 
 .heading-vietnam {
@@ -278,34 +285,33 @@ h1 {
   flex: 1;
   padding: 2rem;
   box-sizing: border-box;
-  height: 100vh;
-  overflow-y: auto;
+  height: auto;           /* was 100vh */
+  min-height: 100vh;      /* optional, keeps it at least full screen */
   background: #fdf8ec;
-
   display: flex;
-  justify-content: center;   /* center scrapbook horizontally */
+  justify-content: center;
+  overflow: visible;      /* or just remove overflow-y entirely */
 }
 
 /* scrapbook grid */
 .scrapbook {
-  column-count: 3;
-  column-gap: 1.5rem;
-  max-width: 1100px;         /* cap the width so 3 cols fit safely */
+  column-count: 3;          /* 3 equal-width columns */
+  column-gap: 1.5rem;       /* space between columns */
+  max-width: 1100px;
   width: 100%;
 }
 
+/* responsive tweaks */
 @media (max-width: 1200px) {
   .scrapbook {
     column-count: 2;
   }
 }
-
 @media (max-width: 800px) {
   .scrapbook {
     column-count: 1;
   }
 }
-
 
 /* individual “polaroid” / note card */
 .scrap-card {
@@ -316,12 +322,12 @@ h1 {
   font-size: 0.9rem;
   position: relative;
 
-  display: inline-block;     /* so it flows inside columns */
+  display: inline-block;      /* important for multi-columns */
   width: 100%;
   box-sizing: border-box;
-  margin: 0 0 1.5rem;        /* space between cards vertically */
+  margin: 0 0 1.5rem;         /* vertical spacing */
 
-  break-inside: avoid;       /* keep each card in one piece */
+  break-inside: avoid;        /* don't split cards across columns */
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
 }
