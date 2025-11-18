@@ -272,3 +272,90 @@ h1 {
 .main-content:hover::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.35);
 }
+
+/* only for the "to me" page */
+.page-to-me .main {
+  flex: 1;
+  padding: 2rem;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-y: auto;
+  background: #fdf8ec;
+
+  display: flex;
+  justify-content: center;   /* center scrapbook horizontally */
+}
+
+/* scrapbook grid */
+.scrapbook {
+  column-count: 3;
+  column-gap: 1.5rem;
+  max-width: 1100px;         /* cap the width so 3 cols fit safely */
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .scrapbook {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 800px) {
+  .scrapbook {
+    column-count: 1;
+  }
+}
+
+
+/* individual “polaroid” / note card */
+.scrap-card {
+  background: #fffdf7;
+  border: 1px solid #111;
+  padding: 0.75rem 0.9rem;
+  box-shadow: 2px 2px 0 #111;
+  font-size: 0.9rem;
+  position: relative;
+
+  display: inline-block;     /* so it flows inside columns */
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 1.5rem;        /* space between cards vertically */
+
+  break-inside: avoid;       /* keep each card in one piece */
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+}
+
+/* wide card that spans 2 columns */
+.scrap-card--wide {
+  column-span: all;          /* span across columns */
+  width: 100%;
+}
+
+/* image inside card */
+.scrap-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+
+/* little label at top of a card */
+.scrap-tag {
+  font-size: 0.75rem;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+  opacity: 0.7;
+  font-family: "Be Vietnam Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* slightly messy scrapbook vibes */
+.scrap-card:nth-child(2n) {
+  transform: rotate(-1.5deg);
+}
+
+.scrap-card:nth-child(3n) {
+  transform: rotate(1.2deg);
+}
