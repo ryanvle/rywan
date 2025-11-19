@@ -335,7 +335,8 @@ h1 {
 }
 
 /* image inside card */
-.scrap-card img {
+.scrap-card img,
+.scrap-card video {
   width: 100%;
   height: auto;
   display: block;
