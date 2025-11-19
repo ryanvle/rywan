@@ -11,12 +11,7 @@ body {
  overflow: hidden; 
 }
 
-body.page-to-me {
-  height: auto;          /* allow page to grow */
-  min-height: 100vh;     /* still at least full viewport */
-  overflow-x: hidden;    /* keep sideways stuff hidden */
-  overflow-y: auto;      /* but allow vertical scroll */
-}
+
 
 .heading-vietnam {
   font-family: "Be Vietnam Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -24,8 +19,9 @@ body.page-to-me {
 
 
 .sidebar {
+  flex: 0 0 250px;      /* fixed width in the flex layout */
   width: 250px;
-  height: 100vh; 
+  height: 100vh;
   border-right: 1px solid black;
   padding: 2rem 2rem;
   overflow-y: hidden;
@@ -285,20 +281,20 @@ h1 {
   flex: 1;
   padding: 2rem;
   box-sizing: border-box;
-  height: auto;           /* was 100vh */
-  min-height: 100vh;      /* optional, keeps it at least full screen */
-  background: #fdf8ec;
-  display: flex;
-  justify-content: center;
-  overflow: visible;      /* or just remove overflow-y entirely */
+  height: 100vh;          /* fill the viewport next to sidebar */
+  overflow-y: auto;       /* vertical scroll */
+  overflow-x: hidden;     /* ❗ kill sideways scroll */
+
+  display: block;         /* override the flex layout from .main */
 }
 
 /* scrapbook grid */
 .scrapbook {
-  column-count: 3;          /* 3 equal-width columns */
-  column-gap: 1.5rem;       /* space between columns */
+  column-count: 3;
+  column-gap: 1.5rem;
   max-width: 1100px;
   width: 100%;
+  margin: 0 auto;        /* optional: center it */
 }
 
 /* responsive tweaks */
@@ -315,7 +311,7 @@ h1 {
 
 /* individual “polaroid” / note card */
 .scrap-card {
-  background: #fffdf7;
+  background: #fdf8ec;
   border: 1px solid #111;
   padding: 0.75rem 0.9rem;
   box-shadow: 2px 2px 0 #111;
