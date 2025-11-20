@@ -11,6 +11,10 @@ body {
  overflow: hidden; 
 }
 
+#nextprev {
+  padding-top: 5%;
+}
+
 
 
 .heading-vietnam {
