@@ -3,6 +3,8 @@
   src: url('Amiri-Italic.ttf');
 }
 
+
+
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -300,7 +302,8 @@ h2 {
   column-gap: 1.5rem;
   max-width: 1100px;
   width: 100%;
-  margin: 0 auto;        /* optional: center it */
+  margin: 0 auto;
+  font-family: 'Caveat';       /* optional: center it */
 }
 
 /* responsive tweaks */
@@ -321,7 +324,7 @@ h2 {
   border: 1px solid #111;
   padding: 0.75rem 0.9rem;
   box-shadow: 2px 2px 0 #111;
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   position: relative;
 
   display: inline-block;      /* important for multi-columns */
