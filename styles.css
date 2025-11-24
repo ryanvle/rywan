@@ -143,6 +143,7 @@ h2 {
   font-size: clamp(2rem, 3vw, 3.5rem);  
   line-height: 1;
   opacity: 0.3;
+
 }
 
 .home-word span {
@@ -370,4 +371,26 @@ h2 {
 
 .scrap-card:nth-child(3n) {
   transform: rotate(1.2deg);
+}
+
+.literature h2 {
+  margin-bottom: 0.3rem;
+}
+
+.literature blockquote {
+  margin-left: 0px;
+  text-decoration-line: line-through;
+  text-decoration-color: #d2ec8970;
+  text-decoration-thickness: 1rem;
+  text-underline-offset: -0.3rem;
+}
+
+.literature a {
+  transition: all 400ms;
+  text-decoration: none;
+  color: black;
+}
+
+.literature a:hover {
+  color: #f5c652;
 }
