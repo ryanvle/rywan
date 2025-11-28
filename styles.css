@@ -394,3 +394,17 @@ h2 {
 .lit a:hover {
   color: #f5c652;
 }
+
+/* .main-content hr {
+  border: none;               
+  border-top: 1px solid #111;  
+  margin: 2rem 0;             
+  width: 100%;              
+}
+*/
+.main-content hr {
+  border: none;               
+  border-top: 1px solid oklch(76.89% 0.004 247.87);  
+  margin: 2rem auto;              
+  width: 100%;                
+}
