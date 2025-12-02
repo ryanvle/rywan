@@ -395,16 +395,22 @@ h2 {
   color: #f5c652;
 }
 
-/* .main-content hr {
-  border: none;               
-  border-top: 1px solid #111;  
-  margin: 2rem 0;             
-  width: 100%;              
-}
-*/
 .main-content hr {
   border: none;               
   border-top: 1px solid oklch(76.89% 0.004 247.87);  
   margin: 2rem auto;              
   width: 100%;                
+}
+
+.life-era {
+  margin-top: 1.0rem;
+}
+
+.life-era strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.life-era p {
+  margin: 0.1rem 0;
 }
