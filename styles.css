@@ -246,11 +246,29 @@ h2 {
 .garden-checklist a {
   color: #111;
   text-decoration: none;
-  border-bottom: 1px dashed rgba(0,0,0,0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.2s ease;
 } 
 
+.garden-checklist a::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='4.2' r='3.6' fill='%238b5fc1'/%3E%3Ccircle cx='4.2' cy='12' r='3.6' fill='%238b5fc1'/%3E%3Ccircle cx='19.8' cy='12' r='3.6' fill='%238b5fc1'/%3E%3Ccircle cx='12' cy='19.8' r='3.6' fill='%238b5fc1'/%3E%3Ccircle cx='12' cy='12' r='4.4' fill='%23f5c652' stroke='%23e0b243' stroke-width='0.8'/%3E%3C/svg%3E") center/contain no-repeat;
+  opacity: 0;
+  transform: translateY(2px) scale(0.85);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
 .garden-checklist a:hover {
-  border-bottom-style: solid;
+  color: green;
+}
+
+.garden-checklist a:hover::after {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 /* the empty square */
@@ -465,4 +483,28 @@ h2 {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
+}
+
+#statuscafe {
+  padding: 0.75em 1em;
+  background: #fff;
+  color: #111;
+  border: 1px dotted #111;
+  display: inline-block;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-shadow: 2px 2px 0 #111;
+  max-width: 320px;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}
+#statuscafe-username {
+  margin-bottom: 0.35em;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+#statuscafe-content {
+  margin: 0;
+  font-size: 0.95rem;
 }
