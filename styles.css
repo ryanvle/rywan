@@ -115,6 +115,11 @@ h2 {
   min-height: 0; 
 }
 
+.main-content img {
+  max-width: 100%;
+  height: auto;
+}
+
 .main-graphic {
   flex: 0 0 50%;
   max-width: 50%;
