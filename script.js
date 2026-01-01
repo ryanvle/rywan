@@ -165,11 +165,11 @@ for ( let i = 0; i < numberOfRecentPosts; i++ ) {
 /*If you've written more posts than can fit in the Recent Posts List,
   then we'll add a link to the archive so readers can find the rest of
   your wonderful posts and be filled with knowledge.*/
-if ( postsArray.length > recentPostsCutoff ) {
-  recentPostListHTML += '<li class="moreposts"><a href=' + relativePath + '/archive.html>\u00BB more posts</a></li></ul>';
-} else {
-  recentPostListHTML += "</ul>";
-}
+// if ( postsArray.length > recentPostsCutoff ) {
+//   recentPostListHTML += '<li class="moreposts"><a href=' + relativePath + '/archive.html>\u00BB more posts</a></li></ul>';
+// } else {
+//   recentPostListHTML += "</ul>";
+// }
 
 //Generate the Next and Previous Post Links HTML
 let nextprevHTML = "";
