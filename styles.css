@@ -513,3 +513,99 @@ h2 {
   margin: 0;
   font-size: 0.95rem;
 }
+
+.game-log-wrap {
+  margin-top: 1rem;
+  border: 1px solid #111;
+  background: #fff;
+  overflow-x: auto;
+}
+
+.game-log-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.game-log-table th,
+.game-log-table td {
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid #111;
+  vertical-align: top;
+}
+
+.game-log-table th {
+  font-family: "Be Vietnam Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-transform: lowercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  background: #fafafa;
+  white-space: nowrap;
+}
+
+.game-log-sort {
+  margin-left: 0.35rem;
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: #111;
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.45;
+}
+
+.game-log-sort:hover,
+.game-log-sort:focus-visible,
+.game-log-sort.active {
+  opacity: 1;
+}
+
+.game-log-sort:focus-visible {
+  outline: 1px dashed #111;
+  outline-offset: 2px;
+}
+
+.game-log-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.game-log-status {
+  display: inline-block;
+  border: 1px solid #111;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.75rem;
+  text-transform: lowercase;
+}
+
+.status-active {
+  background: #e7f6e7;
+}
+
+.status-casual {
+  background: #fdf3d8;
+}
+
+.status-pause {
+  background: #f5e8ea;
+}
+
+.games-list li {
+  margin-bottom: 0.3rem;
+}
+
+.games-word {
+  transform: translate(-80%, -118%) rotate(-7deg);
+  opacity: 0.35;
+  line-height: 1.05;
+}
+
+.games-word span {
+  margin-left: 0 !important;
+}
+
+.games-word span + span {
+  margin-top: 0.35rem;
+  margin-left: 1.2rem !important;
+}

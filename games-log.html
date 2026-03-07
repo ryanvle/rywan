@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"/>
+    <link href="https://db.onlinewebfonts.com/c/ee370020af4cc38c4c8d7c96ae01dda8?family=Iwata+Kaisho" rel="stylesheet">
+
+    <link rel="icon" href="erm.PNG">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>rywan</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <p class="profile-desc">
+                <img src="drawnme.png" alt="" style="width: 40%;">
+                <span class="heading-vietnam" style="font-weight: bolder; font-size: xx-large;">rywan</span>
+                <p style="font-size: small;">just <br>curious</p>
+            </p>
+        </div>
+        <br>
+        <div class="menu">
+            <a href="index.html" class="menu-link">home</a>
+            <a href="about.html" class="menu-link">about</a>
+            <a href="flora.html" class="menu-link">flora</a>
+            <a href="to-me.html" class="menu-link">to me</a>
+            <a href="blog.html" class="menu-link">blog</a>
+            <a href="games-log.html" class="menu-link">games log</a>
+            <a href="literature.html" class="menu-link">literature</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="main-content">
+            <h1>games log</h1>
+            <p>A running list of games I play, what mode I am in, and what I want to improve.</p>
+
+            <div class="game-log-wrap">
+                <table class="game-log-table">
+                    <thead>
+                        <tr>
+                            <th>game</th>
+                            <th>
+                                rating
+                                <button class="game-log-sort" type="button" data-sort-key="rating" aria-label="Sort by rating">&#8597;</button>
+                            </th>
+                            <th>status</th>
+                            <th>
+                                favorite
+                                <button class="game-log-sort" type="button" data-sort-key="favorite" aria-label="Sort by favorite">&#8597;</button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Overwatch 2</td>
+                            <td>5/5 stars</td>
+                            <td><span class="game-log-status status-active">active</span></td>
+                            <td>yes</td>
+                        </tr>
+                        <tr>
+                            <td>Valorant</td>
+                            <td>4/5 stars</td>
+                            <td><span class="game-log-status status-active">active</span></td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>League of Legends</td>
+                            <td>3/5 stars</td>
+                            <td><span class="game-log-status status-casual">casual</span></td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>Webfishing</td>
+                            <td>4/5 stars</td>
+                            <td><span class="game-log-status status-pause">on pause</span></td>
+                            <td>no</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>games to try</h2>
+            <ul class="games-list">
+                <li>Marvel Rivals</li>
+                <li>Monster Hunter Wilds</li>
+                <li>Street Fighter 6</li>
+            </ul>
+        </div>
+
+        <div class="main-graphic">
+            <img src="gamesvec.svg" alt="" class="home-line">
+            <div class="home-word games-word">
+                <span>g a m e s</span>
+                <span>l o g</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const table = document.querySelector(".game-log-table");
+            if (!table) {
+                return;
+            }
+
+            const body = table.querySelector("tbody");
+            const sortButtons = table.querySelectorAll(".game-log-sort");
+            const sortState = { key: null, direction: "desc" };
+
+            function getValue(row, key) {
+                if (key === "rating") {
+                    const ratingText = row.children[1].textContent.trim();
+                    const parsed = parseFloat(ratingText);
+                    return Number.isNaN(parsed) ? 0 : parsed;
+                }
+
+                if (key === "favorite") {
+                    const favoriteText = row.children[3].textContent.trim().toLowerCase();
+                    return favoriteText === "yes" ? 1 : 0;
+                }
+
+                return 0;
+            }
+
+            function updateButtonIcons() {
+                sortButtons.forEach((button) => {
+                    const isActive = button.dataset.sortKey === sortState.key;
+                    button.classList.toggle("active", isActive);
+
+                    if (!isActive) {
+                        button.textContent = "\u2195";
+                        return;
+                    }
+
+                    button.textContent = sortState.direction === "asc" ? "\u25B2" : "\u25BC";
+                });
+            }
+
+            function sortRows(key) {
+                if (sortState.key === key) {
+                    sortState.direction = sortState.direction === "desc" ? "asc" : "desc";
+                } else {
+                    sortState.key = key;
+                    sortState.direction = "desc";
+                }
+
+                const rows = Array.from(body.querySelectorAll("tr"));
+                rows.sort((a, b) => {
+                    const aValue = getValue(a, key);
+                    const bValue = getValue(b, key);
+
+                    if (aValue === bValue) {
+                        return 0;
+                    }
+
+                    if (sortState.direction === "asc") {
+                        return aValue > bValue ? 1 : -1;
+                    }
+
+                    return aValue < bValue ? 1 : -1;
+                });
+
+                rows.forEach((row) => body.appendChild(row));
+                updateButtonIcons();
+            }
+
+            sortButtons.forEach((button) => {
+                button.addEventListener("click", function () {
+                    sortRows(button.dataset.sortKey);
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
