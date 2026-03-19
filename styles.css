@@ -261,7 +261,7 @@ h2 {
   content: "";
   width: 14px;
   height: 14px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='4.2' r='3.6' fill='%238b5fc1'/%3E%3Ccircle cx='4.2' cy='12' r='3.6' fill='%238b5fc1'/%3E%3Ccircle cx='19.8' cy='12' r='3.6' fill='%238b5fc1'/%3E%3Ccircle cx='12' cy='19.8' r='3.6' fill='%238b5fc1'/%3E%3Ccircle cx='12' cy='12' r='4.4' fill='%23f5c652' stroke='%23e0b243' stroke-width='0.8'/%3E%3C/svg%3E") center/contain no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='4.2' r='3.6' fill='%23000'/%3E%3Ccircle cx='4.2' cy='12' r='3.6' fill='%23000'/%3E%3Ccircle cx='19.8' cy='12' r='3.6' fill='%23000'/%3E%3Ccircle cx='12' cy='19.8' r='3.6' fill='%23000'/%3E%3Ccircle cx='12' cy='12' r='4.4' fill='%23fff' stroke='%23000' stroke-width='0.8'/%3E%3C/svg%3E") center/contain no-repeat;
   opacity: 0;
   transform: translateY(2px) scale(0.85);
   transition: opacity 0.18s ease, transform 0.18s ease;
@@ -429,6 +429,29 @@ h2 {
   margin-top: 1.0rem;
 }
 
+.about .main-content h1 {
+  margin: 0 0 0.65rem;
+  line-height: 1.1;
+}
+
+.about .main-content h2 {
+  margin: 1rem 0 0.35rem;
+  line-height: 1.15;
+}
+
+.about .main-content h3 {
+  margin: 0.65rem 0 0.2rem;
+  line-height: 1.15;
+}
+
+.about .main-content > p {
+  margin: 0.35rem 0;
+}
+
+.about .main-content img {
+  margin-bottom: 0.35rem;
+}
+
 .life-era strong {
   display: block;
   margin-bottom: 0.25rem;
@@ -441,8 +464,18 @@ h2 {
 .tooltip {
   position: relative;
   display: inline-block;
-  cursor: inherit;
-  text-decoration: underline;
+  cursor: help;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}
+
+.tooltip > a {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
 }
 
 .tooltip-box {
@@ -542,6 +575,11 @@ h2 {
   letter-spacing: 0.02em;
   background: #fafafa;
   white-space: nowrap;
+}
+
+.game-log-count {
+  color: #666;
+  font-weight: 400;
 }
 
 .game-log-sort {

@@ -44,7 +44,7 @@
                 <table class="game-log-table">
                     <thead>
                         <tr>
-                            <th>game</th>
+                            <th>game <span class="game-log-count" aria-label="number of entries"></span></th>
                             <th>
                                 rating
                                 <button class="game-log-sort" type="button" data-sort-key="rating" aria-label="Sort by rating">&#8597;</button>
@@ -275,6 +275,54 @@
                             <td>no</td>
                         </tr>
 
+                        <tr>
+                            <td>Deadlock</td>
+                            <td>4/5 stars</td>
+                            <td><span class="game-log-status status-active">mo & krill</span></td>
+                            <td>no</td>
+                        </tr>
+
+                        <tr>
+                            <td>Hunt: Showdown 1896</td>
+                            <td>3/5 stars</td>
+                            <td><span class="game-log-status status-pause">annoying pve + pvp</span></td>
+                            <td>no</td>
+                        </tr>
+
+                        <tr>
+                            <td>V Rising</td>
+                            <td>4/5 stars</td>
+                            <td><span class="game-log-status status-pause">vamp LoL</span></td>
+                            <td>no</td>
+                        </tr>
+
+                        <tr>
+                            <td>PEAK</td>
+                            <td>4/5 stars</td>
+                            <td><span class="game-log-status status-casual">i heb idea</span></td>
+                            <td>no</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Spectre Divide</td>
+                            <td>1/5 stars</td>
+                            <td><span class="game-log-status status-pause">shroud doo doo</span></td>
+                            <td>no</td>
+                        </tr>
+
+                        <tr>
+                            <td>Super Smash Bros. Melee</td>
+                            <td>5/5 stars</td>
+                            <td><span class="game-log-status status-casual">falcon punch</span></td>
+                            <td>yes</td>
+                        </tr>
+
+                        <tr>
+                            <td>Rivals of Aether</td>
+                            <td>4/5 stars</td>
+                            <td><span class="game-log-status status-pause">zetterburn</span></td>
+                            <td>no</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -307,6 +355,7 @@
             }
 
             const body = table.querySelector("tbody");
+            const count = table.querySelector(".game-log-count");
             const sortButtons = table.querySelectorAll(".game-log-sort");
             const sortState = { key: null, direction: "desc" };
             const statusPriority = { active: 0, casual: 1, pause: 2 };
@@ -314,6 +363,10 @@
             Array.from(body.querySelectorAll("tr")).forEach((row, index) => {
                 row.dataset.originalIndex = String(index);
             });
+
+            if (count) {
+                count.textContent = "(" + body.querySelectorAll("tr").length + ")";
+            }
 
             function getValue(row, key) {
                 if (key === "rating") {
