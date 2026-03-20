@@ -44,7 +44,7 @@ h2 {
 .profile {
 	border: 1px solid black;
 	padding: 15px;
-  padding-bottom: 0;
+  padding-bottom: 3px;
 	border-top: 8px solid black;
 	min-height: 90px;
 }
@@ -52,10 +52,12 @@ h2 {
 .profile .profile-desc {
 	display: block;
 	text-align:justify;
+  margin: 1em 0;
 }
 
-.profile .profile-desc p {
-  margin: 0;
+.profile .profile-tagline {
+  margin: 1em 0;
+  font-size: small;
 }
 
 .profile img {
