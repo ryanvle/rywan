@@ -14,14 +14,14 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>rywan</title>
 </head>
-<body>
+<body class="games-log-page">
     <div class="sidebar">
         <div class="profile">
-            <p class="profile-desc">
+            <div class="profile-desc">
                 <img src="drawnme.png" alt="" style="width: 40%;">
                 <span class="heading-vietnam" style="font-weight: bolder; font-size: xx-large;">rywan</span>
                 <p style="font-size: small;">just <br>curious</p>
-            </p>
+            </div>
         </div>
         <br>
         <div class="menu">
@@ -44,287 +44,321 @@
                 <table class="game-log-table">
                     <thead>
                         <tr>
-                            <th>game <span class="game-log-count" aria-label="number of entries"></span></th>
-                            <th>
+                            <th scope="col">game <span class="game-log-count" aria-label="number of entries"></span></th>
+                            <th scope="col">
                                 rating
                                 <button class="game-log-sort" type="button" data-sort-key="rating" aria-label="Sort by rating">&#8597;</button>
                             </th>
-                            <th>status</th>
-                            <th>
+                            <th scope="col">status</th>
+                            <th scope="col">note</th>
+                            <th scope="col">
                                 favorite
                                 <button class="game-log-sort" type="button" data-sort-key="favorite" aria-label="Sort by favorite">&#8597;</button>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- status-active casual pause -->
                         <tr>
                             <td>Overwatch</td>
                             <td>4/5 stars</td>
                             <td><span class="game-log-status status-active">active</span></td>
+                            <td class="game-log-note">hampterbot</td>
                             <td>yes</td>
                         </tr>
                         <tr>
                             <td>Valorant</td>
                             <td>4/5 stars</td>
                             <td><span class="game-log-status status-casual">casual</span></td>
+                            <td class="game-log-note">5 stack andy</td>
                             <td>yes</td>
                         </tr>
                         <tr>
                             <td>League of Legends</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">eww</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">eww</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Webfishing</td>
                             <td>5/5 stars</td>
-                            <td><span class="game-log-status status-casual">chill</span></td>
+                            <td><span class="game-log-status status-casual">casual</span></td>
+                            <td class="game-log-note">chill</td>
                             <td>yes</td>
                         </tr>
                         <tr>
                             <td>Counter-Strike 2</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">< valo</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">&lt; valo</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Monster Hunter: World</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">monsters</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">monsters</td>
                             <td>no</td>
                         </tr>
                         <tr>
-                            <td>Tom Clancy’s Rainbow Six Siege</td>
+                            <td>Tom Clancy&#39;s Rainbow Six Siege</td>
                             <td>2/5 stars</td>
-                            <td><span class="game-log-status status-pause">boring</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">boring</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>FreeStyle 2: Street Basketball</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-pause">ball4life</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">ball4life</td>
                             <td>yes</td>
                         </tr>
                         <tr>
                             <td>Destiny 2</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">aliens</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">aliens</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Team Fortress 2</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-pause">scout</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">scout</td>
                             <td>yes</td>
                         </tr>
                         <tr>
                             <td>Apex Legends</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">gibby</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">gibby</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Albion Online</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">wood log</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">wood log</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Black Desert Online</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">< warrior</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">&lt; warrior</td>
                             <td>no</td>
                         </tr>
                         <tr>
-                            <td>Garry’s Mod</td>
+                            <td>Garry&#39;s Mod</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-pause">creative</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">creative</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Roblox</td>
                             <td>2/5 stars</td>
-                            <td><span class="game-log-status status-pause">weirdos</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">weirdos</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Street Fighter 6</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-casual">ryu</span></td>
+                            <td><span class="game-log-status status-casual">casual</span></td>
+                            <td class="game-log-note">ryu</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Destiny 2</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">aliens</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">aliens</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Warframe</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">excal</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">excal</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Rust</td>
                             <td>2/5 stars</td>
-                            <td><span class="game-log-status status-pause">griefing</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">griefing</td>
                             <td>no</td>
                         </tr>
                         <tr>
-                            <td>Baldur’s Gate 3</td>
+                            <td>Baldur&#39;s Gate 3</td>
                             <td>5/5 stars</td>
-                            <td><span class="game-log-status status-pause">lae'zel</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">lae&#39;zel</td>
                             <td>yes</td>
                         </tr>
                         <tr>
                             <td>Terraria</td>
                             <td>5/5 stars</td>
-                            <td><span class="game-log-status status-pause">summoner</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">summoner</td>
                             <td>yes</td>
                         </tr>
                         <tr>
                             <td>Divinity Original Sin 2</td>
                             <td>5/5 stars</td>
-                            <td><span class="game-log-status status-pause">fane</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">fane</td>
                             <td>yes</td>
                         </tr>
                         <tr>
                             <td>Marvel Rivals</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">cant run</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">cant run</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Minecraft</td>
                             <td>5/5 stars</td>
-                            <td><span class="game-log-status status-pause">MCSR</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">MCSR</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>TEKKEN 8</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-casual">qcf+2</span></td>
+                            <td><span class="game-log-status status-casual">casual</span></td>
+                            <td class="game-log-note">qcf+2</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Lost Ark</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">ehhh</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">ehhh</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Total War: SHOGUN 2</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-pause">legendary</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">legendary</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>MapleStory</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">og grind</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">og grind</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Monster Hunter: World</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-pause">E Class</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">E Class</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>MultiVersus</td>
                             <td>2/5 stars</td>
-                            <td><span class="game-log-status status-pause">slow</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">slow</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Motor Town: Behind The Wheel</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-pause">driving</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">driving</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Fortnite</td>
                             <td>5/5 stars</td>
-                            <td><span class="game-log-status status-casual">iKON</span></td>
+                            <td><span class="game-log-status status-casual">casual</span></td>
+                            <td class="game-log-note">iKON</td>
                             <td>yes</td>
                         </tr>
                         <tr>
                             <td>Aragami</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-pause">ninja</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">ninja</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Aragami 2</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">tragic</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">tragic</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>9 Monkeys of Shaolin</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-pause">monks</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">monks</td>
                             <td>no</td>
                         </tr>
                         <tr>
                             <td>Risk of Rain 2</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-pause">loader</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">loader</td>
                             <td>no</td>
                         </tr>
-
                         <tr>
                             <td>Deadlock</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-active">mo & krill</span></td>
+                            <td><span class="game-log-status status-active">active</span></td>
+                            <td class="game-log-note">mo &amp; krill</td>
                             <td>no</td>
                         </tr>
-
                         <tr>
                             <td>Hunt: Showdown 1896</td>
                             <td>3/5 stars</td>
-                            <td><span class="game-log-status status-pause">annoying pve + pvp</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">annoying pve + pvp</td>
                             <td>no</td>
                         </tr>
-
                         <tr>
                             <td>V Rising</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-pause">vamp LoL</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">vamp LoL</td>
                             <td>no</td>
                         </tr>
-
                         <tr>
                             <td>PEAK</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-casual">i heb idea</span></td>
+                            <td><span class="game-log-status status-casual">casual</span></td>
+                            <td class="game-log-note">i heb idea</td>
                             <td>no</td>
                         </tr>
-                        
                         <tr>
                             <td>Spectre Divide</td>
                             <td>1/5 stars</td>
-                            <td><span class="game-log-status status-pause">shroud doo doo</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">shroud doo doo</td>
                             <td>no</td>
                         </tr>
-
                         <tr>
                             <td>Super Smash Bros. Melee</td>
                             <td>5/5 stars</td>
-                            <td><span class="game-log-status status-casual">falcon punch</span></td>
+                            <td><span class="game-log-status status-casual">casual</span></td>
+                            <td class="game-log-note">falcon punch</td>
                             <td>yes</td>
                         </tr>
-
                         <tr>
                             <td>Rivals of Aether</td>
                             <td>4/5 stars</td>
-                            <td><span class="game-log-status status-pause">zetterburn</span></td>
+                            <td><span class="game-log-status status-pause">pause</span></td>
+                            <td class="game-log-note">zetterburn</td>
                             <td>no</td>
                         </tr>
-
-
                     </tbody>
                 </table>
             </div>
@@ -335,7 +369,7 @@
                 <li>Bomb Rush Cyberfunk</li>
                 <li>Bonnie Bear Saves Frogtime</li>
                 <li>Airframe Ultra</li>
-                <li>Scratchin' Melodii</li>
+                <li>Scratchin&#39; Melodii</li>
                 <li>TAMASHIKA</li>
             </ul>
         </div>
@@ -378,7 +412,7 @@
                 }
 
                 if (key === "favorite") {
-                    const favoriteText = row.children[3].textContent.trim().toLowerCase();
+                    const favoriteText = row.children[4].textContent.trim().toLowerCase();
                     return favoriteText === "yes" ? 1 : 0;
                 }
 

@@ -50,8 +50,12 @@ h2 {
 }
 
 .profile .profile-desc {
-	display: inline;
+	display: block;
 	text-align:justify;
+}
+
+.profile .profile-desc p {
+  margin: 0;
 }
 
 .profile img {
@@ -444,6 +448,7 @@ h2 {
 
 .literature blockquote {
   margin-left: 0px;
+  color: #111;
   text-decoration-line: line-through;
   text-decoration-color: #e7da6fa8;
   text-decoration-thickness: 1rem;
@@ -659,6 +664,10 @@ h2 {
   text-transform: lowercase;
 }
 
+.game-log-note {
+  color: #444;
+}
+
 .status-active {
   background: #e7f6e7;
 }
@@ -688,4 +697,70 @@ h2 {
 .games-word span + span {
   margin-top: 0.35rem;
   margin-left: 1.2rem !important;
+}
+
+@media (max-width: 980px) {
+  body.games-log-page {
+    display: block;
+    height: auto;
+    overflow: auto;
+  }
+
+  .games-log-page .sidebar {
+    width: auto;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #111;
+    padding: 1.25rem;
+  }
+
+  .games-log-page .main {
+    display: block;
+    min-height: 0;
+  }
+
+  .games-log-page .main-content,
+  .games-log-page .main-graphic {
+    flex: none;
+    max-width: none;
+  }
+
+  .games-log-page .main-content {
+    padding: 1.25rem;
+    overflow: visible;
+  }
+
+  .games-log-page .main-graphic {
+    height: min(60vh, 420px);
+    border-top: 1px solid #111;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .games-log-page .main-graphic .home-line {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .games-log-page .games-word {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-7deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .games-log-page .game-log-table {
+    font-size: 0.9rem;
+  }
+
+  .games-log-page .game-log-table th,
+  .games-log-page .game-log-table td {
+    padding: 0.55rem 0.6rem;
+  }
+
+  .games-log-page .game-log-note {
+    min-width: 10rem;
+  }
 }
