@@ -3,12 +3,97 @@
   src: url('Amiri-Italic.ttf');
 }
 
+:root {
+  color-scheme: light;
+  --bg: #fbfaf6;
+  --surface: #fffdf8;
+  --paper: #fdf8ec;
+  --text: #111;
+  --text-soft: #5f5a51;
+  --border: #111;
+  --border-soft: rgba(17, 17, 17, 0.16);
+  --shadow: #111;
+  --link: #111;
+  --link-hover: #2f6b2f;
+  --menu-fill: #111;
+  --menu-text-hover: #fffdf8;
+  --scrollbar-thumb: rgba(0, 0, 0, 0.12);
+  --scrollbar-thumb-hover: rgba(0, 0, 0, 0.35);
+  --tooltip-bg: rgba(255, 253, 245, 0.96);
+  --tooltip-text: #222;
+  --tooltip-border: rgba(0, 0, 0, 0.12);
+  --tooltip-shadow: rgba(15, 23, 42, 0.18);
+  --statuscafe-bg: #fff;
+  --table-head-bg: #fafafa;
+  --game-note: #444;
+  --status-active: #e7f6e7;
+  --status-casual: #fdf3d8;
+  --status-pause: #f5e8ea;
+  --graphic-filter: none;
+  --graphic-opacity: 1;
+  --literature-surface: #f4ede1;
+  --literature-text: #2f271d;
+  --literature-border-left: rgba(120, 97, 63, 0.14);
+  --literature-border-right: rgba(120, 97, 63, 0.1);
+  --literature-highlight: #e7da6fa8;
+  --literature-link: #111;
+  --literature-link-hover: #2f6b2f;
+  --pull-chain-shell: #181614;
+  --pull-chain-core: #fffaf0;
+  --pull-chain-shadow: rgba(17, 17, 17, 0.18);
+  --pull-finial-shadow: rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141311;
+  --surface: #1a1815;
+  --paper: #201b15;
+  --text: #f3ece0;
+  --text-soft: #b9b1a4;
+  --border: #e8ded0;
+  --border-soft: rgba(232, 222, 208, 0.18);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --link: #f3ece0;
+  --link-hover: #aed7b0;
+  --menu-fill: #f3ece0;
+  --menu-text-hover: #141311;
+  --scrollbar-thumb: rgba(255, 255, 255, 0.18);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.34);
+  --tooltip-bg: rgba(29, 27, 23, 0.96);
+  --tooltip-text: #f3ece0;
+  --tooltip-border: rgba(255, 255, 255, 0.14);
+  --tooltip-shadow: rgba(0, 0, 0, 0.45);
+  --statuscafe-bg: #171512;
+  --table-head-bg: #211d18;
+  --game-note: #c4baaa;
+  --status-active: #203023;
+  --status-casual: #342b1c;
+  --status-pause: #34232a;
+  --graphic-filter: invert(1) brightness(0.94);
+  --graphic-opacity: 0.84;
+  --literature-surface: #1a1712;
+  --literature-text: #eee1c8;
+  --literature-border-left: rgba(232, 222, 208, 0.14);
+  --literature-border-right: rgba(232, 222, 208, 0.1);
+  --literature-highlight: rgba(184, 150, 73, 0.45);
+  --literature-link: #f3ece0;
+  --literature-link-hover: #c6ddb0;
+  --pull-chain-shell: #f1e4d2;
+  --pull-chain-core: #6f665b;
+  --pull-chain-shadow: rgba(255, 244, 224, 0.24);
+  --pull-finial-shadow: rgba(0, 0, 0, 0.34);
+}
+
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
   display: flex;
   height: 100vh; 
- overflow: hidden; 
+ overflow: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 #nextprev {
@@ -21,13 +106,15 @@ body {
 
 
 .sidebar {
-  flex: 0 0 250px;      /* fixed width in the flex layout */
-  width: 250px;
+  flex: 0 0 315px;      /* fixed width in the flex layout */
+  width: 315px;
   height: 100vh;
-  border-right: 1px solid black;
+  background: var(--bg);
+  border-right: 1px solid var(--border);
   padding: 2rem 2rem;
   overflow-y: hidden;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -40,30 +127,55 @@ h2 {
 }
 
 .profile {
-	border: 1px solid black;
+	border: 1px solid var(--border);
 	padding: 15px;
-  padding-bottom: 3px;
-	border-top: 8px solid black;
+  padding-bottom: 15px;
+  display: grid;
+  grid-template-columns: 46% minmax(0, 1fr);
+  column-gap: 8px;
+	border-top: 8px solid var(--border);
 	min-height: 90px;
+  background: var(--surface);
 }
 
 .profile .profile-desc {
-	display: block;
-	text-align:justify;
-  margin: 1em 0;
+	display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.15rem;
+  margin: 0;
+  min-width: 0;
+  align-self: stretch;
 }
 
 .profile .profile-tagline {
-  margin: 1em 0;
+  margin: 0;
+  margin-top: auto;
   font-size: small;
+  line-height: 1.15;
 }
 
 .profile img {
-	border: 1px solid black;
-	display: inline;
-	float: left;
-	margin-bottom: 6px;
-	margin-right: 8px;
+	border: 1px solid var(--border);
+	display: block;
+	float: none;
+	margin: 0;
+  width: 100% !important;
+  align-self: start;
+}
+
+.profile .heading-vietnam {
+  display: block;
+  line-height: 0.95;
+}
+
+body a {
+  color: var(--link);
+  transition: color 0.2s ease;
+}
+
+body a:hover {
+  color: var(--link-hover);
 }
 
 .menu-link {
@@ -72,9 +184,12 @@ h2 {
   padding: 0.5rem 0.75rem;
   margin-bottom: 0.25rem;
   text-decoration: none;
-  color: #111;
+  color: var(--text);
   overflow: hidden;
   text-align: left;
+  z-index: 0;
+  isolation: isolate;
+  transition: color 0.25s ease;
 
   font-family: "Be Vietnam Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -84,7 +199,7 @@ h2 {
   content: "";
   position: absolute;
   inset: 0;               
-  background: #000;
+  background: var(--menu-fill);
   transform: scaleX(0);    
   transform-origin: left; 
   transition: transform 0.25s ease-out;
@@ -96,7 +211,7 @@ h2 {
 }
 
 .menu-link:hover {
-  color: #fff;
+  color: var(--menu-text-hover);
 }
 
 .main {
@@ -112,6 +227,8 @@ h2 {
   padding: 2rem;
   box-sizing: border-box;
   text-wrap: balance;
+  background: var(--surface);
+  color: var(--text);
   
   display: flex;
   flex-direction: column;
@@ -141,6 +258,9 @@ h2 {
   height: 100vh;
   max-width: 100%;
   display: block;
+  filter: var(--graphic-filter);
+  opacity: var(--graphic-opacity);
+  transition: filter 0.25s ease, opacity 0.25s ease;
 }
 
 .home-word {
@@ -174,9 +294,9 @@ h2 {
 /* individual card */
 .flower-card {
   margin: 0;
-  border: 1px solid #111;
+  border: 1px solid var(--border);
   padding: 0.5rem;
-  background: #fdfdfd;
+  background: var(--surface);
 }
 
 .flower-card img {
@@ -208,16 +328,16 @@ h2 {
 }
 
 .garden-box {
-  border: 1px solid #111;
+  border: 1px solid var(--border);
   padding: 1rem 1.25rem;
-  background: #fdfdfd;
+  background: var(--surface);
 }
 
 .garden-title {
   font-family: "Be Vietnam Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 0.95rem;
   text-transform: lowercase;
-  border-bottom: 1px dotted #111;
+  border-bottom: 1px dotted var(--border);
   padding-bottom: 0.35rem;
   margin-bottom: 0.75rem;
   display: inline-block;
@@ -253,7 +373,7 @@ h2 {
 
 /* links to Google Maps */
 .garden-checklist a {
-  color: #111;
+  color: var(--text);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -272,7 +392,7 @@ h2 {
 }
 
 .garden-checklist a:hover {
-  color: green;
+  color: var(--link-hover);
 }
 
 .garden-checklist a:hover::after {
@@ -284,7 +404,7 @@ h2 {
 .garden-checkbox {
   width: 14px;
   height: 14px;
-  border: 1px solid #111;
+  border: 1px solid var(--border);
   display: inline-block;
   flex-shrink: 0;
 }
@@ -292,7 +412,7 @@ h2 {
 /* Firefox */
 .main-content {
   scrollbar-width: thin;                  /* thinner scrollbar */
-  scrollbar-color: rgba(0, 0, 0, 0.05) transparent;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
 }
 
 /* Chrome, Edge, Safari */
@@ -305,11 +425,11 @@ h2 {
 }
 
 .main-content::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.12);
+  background: var(--scrollbar-thumb);
 }
 
 .main-content:hover::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* only for the "to me" page */
@@ -348,10 +468,10 @@ h2 {
 
 /* individual “polaroid” / note card */
 .scrap-card {
-  background: #fdf8ec;
-  border: 1px solid #111;
+  background: var(--paper);
+  border: 1px solid var(--border);
   padding: 0.75rem 0.9rem;
-  box-shadow: 2px 2px 0 #111;
+  box-shadow: 2px 2px 0 var(--shadow);
   font-size: 1.3rem;
   position: relative;
 
@@ -401,8 +521,8 @@ h2 {
 }
 
 .literature .main-content {
-  background-color: #f4ede1;
-  color: #2f271d;
+  background-color: var(--literature-surface);
+  color: var(--literature-text);
   background-image:
     radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.65) 0, rgba(255, 255, 255, 0) 28%),
     radial-gradient(circle at 82% 10%, rgba(203, 181, 145, 0.18) 0, rgba(203, 181, 145, 0) 24%),
@@ -414,8 +534,22 @@ h2 {
       rgba(255, 255, 255, 0) 2px,
       rgba(255, 255, 255, 0) 7px
     );
-  border-left: 1px solid rgba(120, 97, 63, 0.14);
-  border-right: 1px solid rgba(120, 97, 63, 0.1);
+  border-left: 1px solid var(--literature-border-left);
+  border-right: 1px solid var(--literature-border-right);
+}
+
+html[data-theme="dark"] .literature .main-content {
+  background-image:
+    radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.04) 0, rgba(255, 255, 255, 0) 28%),
+    radial-gradient(circle at 82% 10%, rgba(193, 163, 98, 0.08) 0, rgba(193, 163, 98, 0) 24%),
+    linear-gradient(180deg, rgba(255, 248, 230, 0.03), rgba(18, 15, 12, 0.08)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 244, 220, 0.025) 0,
+      rgba(255, 244, 220, 0.025) 1px,
+      rgba(255, 255, 255, 0) 2px,
+      rgba(255, 255, 255, 0) 7px
+    );
 }
 
 .literature h2 {
@@ -448,9 +582,9 @@ h2 {
 
 .literature blockquote {
   margin-left: 0px;
-  color: #111;
+  color: var(--literature-text);
   text-decoration-line: line-through;
-  text-decoration-color: #e7da6fa8;
+  text-decoration-color: var(--literature-highlight);
   text-decoration-thickness: 1rem;
   text-underline-offset: -0.3rem;
 }
@@ -458,16 +592,16 @@ h2 {
 .literature a {
   transition: all 400ms;
   text-decoration: none;
-  color: black;
+  color: var(--literature-link);
 }
 
 .lit a:hover {
-  color: #2f6b2f;
+  color: var(--literature-link-hover);
 }
 
 .main-content hr {
   border: none;               
-  border-top: 1px solid oklch(76.89% 0.004 247.87);  
+  border-top: 1px solid var(--border-soft);  
   margin: 2rem auto;              
   width: 100%;                
 }
@@ -534,11 +668,11 @@ h2 {
 
   
   padding: 0.25rem 0.9rem;          
-  background: rgba(255, 253, 245, 0.96);
-  color: #222;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-text);
   border-radius: 999px;             
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+  border: 1px solid var(--tooltip-border);
+  box-shadow: 0 10px 25px var(--tooltip-shadow);
 
   font-size: .90rem;               
   line-height: 1.2;
@@ -561,7 +695,7 @@ h2 {
   transform: translateX(-50%);
   border-width: 6px;
   border-style: solid;
-  border-color: rgba(255, 253, 245, 0.96) transparent transparent transparent;
+  border-color: var(--tooltip-bg) transparent transparent transparent;
 }
 
 .tooltip:hover .tooltip-box {
@@ -572,12 +706,12 @@ h2 {
 
 #statuscafe {
   padding: 0.75em 1em;
-  background: #fff;
-  color: #111;
-  border: 1px dotted #111;
+  background: var(--statuscafe-bg);
+  color: var(--text);
+  border: 1px dotted var(--border);
   display: inline-block;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  box-shadow: 2px 2px 0 #111;
+  box-shadow: 2px 2px 0 var(--shadow);
   max-width: 320px;
   line-height: 1.4;
   overflow-wrap: break-word;
@@ -596,8 +730,8 @@ h2 {
 
 .game-log-wrap {
   margin-top: 1rem;
-  border: 1px solid #111;
-  background: #fff;
+  border: 1px solid var(--border);
+  background: var(--surface);
   overflow-x: auto;
 }
 
@@ -611,7 +745,7 @@ h2 {
 .game-log-table td {
   text-align: left;
   padding: 0.65rem 0.75rem;
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid var(--border);
   vertical-align: top;
 }
 
@@ -620,12 +754,12 @@ h2 {
   text-transform: lowercase;
   font-size: 0.85rem;
   letter-spacing: 0.02em;
-  background: #fafafa;
+  background: var(--table-head-bg);
   white-space: nowrap;
 }
 
 .game-log-count {
-  color: #666;
+  color: var(--text-soft);
   font-weight: 400;
 }
 
@@ -634,7 +768,7 @@ h2 {
   border: none;
   background: transparent;
   padding: 0;
-  color: #111;
+  color: var(--text);
   font-size: 0.85rem;
   line-height: 1;
   cursor: pointer;
@@ -648,7 +782,7 @@ h2 {
 }
 
 .game-log-sort:focus-visible {
-  outline: 1px dashed #111;
+  outline: 1px dashed var(--border);
   outline-offset: 2px;
 }
 
@@ -658,26 +792,162 @@ h2 {
 
 .game-log-status {
   display: inline-block;
-  border: 1px solid #111;
+  border: 1px solid var(--border);
   padding: 0.1rem 0.5rem;
   font-size: 0.75rem;
   text-transform: lowercase;
 }
 
 .game-log-note {
-  color: #444;
+  color: var(--game-note);
 }
 
 .status-active {
-  background: #e7f6e7;
+  background: var(--status-active);
 }
 
 .status-casual {
-  background: #fdf3d8;
+  background: var(--status-casual);
 }
 
 .status-pause {
-  background: #f5e8ea;
+  background: var(--status-pause);
+}
+
+.theme-pull {
+  --pull-distance: 0px;
+  position: fixed;
+  top: 0;
+  right: clamp(1rem, 2.2vw, 2rem);
+  z-index: 40;
+  pointer-events: none;
+}
+
+.theme-pull__button {
+  position: relative;
+  width: 58px;
+  height: 190px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
+}
+
+.theme-pull__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 20px;
+  height: 10px;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 999px 999px;
+  background: var(--surface);
+  transform: translateX(-50%);
+}
+
+.theme-pull__button:focus-visible {
+  outline: none;
+}
+
+.theme-pull__button:focus-visible .theme-pull__knob {
+  box-shadow: 0 0 0 3px var(--border-soft);
+}
+
+.theme-pull__line,
+.theme-pull__knob {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition:
+    transform 0.22s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.22s ease,
+    opacity 0.22s ease;
+}
+
+.theme-pull__line {
+  top: 7px;
+  width: 12px;
+  height: calc(112px + var(--pull-distance));
+  background:
+    radial-gradient(circle at 50% 4px, var(--pull-chain-core) 0 1.3px, transparent 1.4px),
+    radial-gradient(circle at 50% 4px, var(--pull-chain-shell) 0 3.4px, transparent 3.6px);
+  background-size: 12px 11px;
+  background-repeat: repeat-y;
+  background-position: center top;
+  filter: drop-shadow(0 0 0.7px var(--pull-chain-shadow));
+}
+
+.theme-pull__knob {
+  top: calc(120px + var(--pull-distance));
+  width: 22px;
+  height: 29px;
+  border: 1px solid var(--border);
+  border-radius: 999px 999px 58% 58%;
+  background: var(--surface);
+  box-shadow: 0 10px 18px var(--pull-finial-shadow);
+}
+
+.theme-pull__knob::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--border-soft);
+  border-radius: inherit;
+  opacity: 0.55;
+}
+
+.theme-pull__button:hover .theme-pull__knob {
+  transform: translateX(-50%) translateY(2px);
+}
+
+.theme-pull.is-pulling .theme-pull__knob {
+  transition-duration: 0.08s;
+}
+
+.theme-pull.is-armed .theme-pull__knob {
+  box-shadow: 0 14px 20px var(--pull-finial-shadow);
+}
+
+.theme-pull.is-armed .theme-pull__button {
+  cursor: grabbing;
+}
+
+.theme-pull.is-flash .theme-pull__knob,
+.theme-pull.is-flash .theme-pull__button::before {
+  background: var(--menu-fill);
+}
+
+.theme-pull.is-flash .theme-pull__knob {
+  background: var(--menu-fill);
+  border-color: var(--menu-fill);
+}
+
+@media (max-width: 700px) {
+  .theme-pull {
+    right: 0.6rem;
+  }
+
+  .theme-pull__button {
+    width: 52px;
+    height: 168px;
+  }
+
+  .theme-pull__line {
+    height: calc(96px + var(--pull-distance));
+  }
+
+  .theme-pull__knob {
+    top: calc(103px + var(--pull-distance));
+    width: 20px;
+    height: 26px;
+  }
 }
 
 .games-list li {
@@ -710,7 +980,7 @@ h2 {
     width: auto;
     height: auto;
     border-right: none;
-    border-bottom: 1px solid #111;
+    border-bottom: 1px solid var(--border);
     padding: 1.25rem;
   }
 
@@ -732,7 +1002,7 @@ h2 {
 
   .games-log-page .main-graphic {
     height: min(60vh, 420px);
-    border-top: 1px solid #111;
+    border-top: 1px solid var(--border);
     align-items: center;
     justify-content: center;
   }
@@ -763,4 +1033,28 @@ h2 {
   .games-log-page .game-log-note {
     min-width: 10rem;
   }
+}
+
+html[data-theme="dark"] .garden-checklist a::after {
+  filter: invert(1);
+}
+
+.sidebar,
+.main-content,
+.main-graphic,
+.profile,
+.flower-card,
+.garden-box,
+.scrap-card,
+#statuscafe,
+.game-log-wrap,
+.game-log-table th,
+.game-log-status,
+.tooltip-box,
+.theme-pull__knob,
+.theme-pull__button::before {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
