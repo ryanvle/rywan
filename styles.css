@@ -35,7 +35,6 @@
   --literature-text: #2f271d;
   --literature-border-left: rgba(120, 97, 63, 0.14);
   --literature-border-right: rgba(120, 97, 63, 0.1);
-  --literature-highlight: #e7da6fa8;
   --literature-link: #111;
   --literature-link-hover: #2f6b2f;
   --pull-chain-shell: #181614;
@@ -76,7 +75,6 @@ html[data-theme="dark"] {
   --literature-text: #eee1c8;
   --literature-border-left: rgba(232, 222, 208, 0.14);
   --literature-border-right: rgba(232, 222, 208, 0.1);
-  --literature-highlight: rgba(184, 150, 73, 0.45);
   --literature-link: #f3ece0;
   --literature-link-hover: #c6ddb0;
   --pull-chain-shell: #f1e4d2;
@@ -581,12 +579,12 @@ html[data-theme="dark"] .literature .main-content {
 }
 
 .literature blockquote {
-  margin-left: 0px;
+  margin: 0.85rem 0 2.25rem;
+  max-width: 42rem;
   color: var(--literature-text);
-  text-decoration-line: line-through;
-  text-decoration-color: var(--literature-highlight);
-  text-decoration-thickness: 1rem;
-  text-underline-offset: -0.3rem;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.12rem;
+  line-height: 1.7;
 }
 
 .literature a {
